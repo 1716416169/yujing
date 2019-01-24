@@ -1,0 +1,73 @@
+#center {
+  height: 1200px;
+}
+#center #center_left #center_left_list ul li:hover a {
+  color: #000;
+}
+#center #center_left #center_left_list:hover a {
+  text-decoration: none !important;
+}
+#center #center_left #center_left_list .cliked a {
+  color: #4785B5;
+}
+#center #center_left #center_left_list .cliked:hover a {
+  color: #4785B5;
+}
+#center #center_right #center_right_main {
+  margin-top: 30px;
+}
+#center #center_right #center_right_main .process_box {
+  margin-top: 30px;
+  height: 25rem;
+  position: relative;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+#center #center_right #center_right_main .process_box:nth-child(odd) img {
+  float: left;
+}
+#center #center_right #center_right_main .process_box:nth-child(odd) div {
+  float: right;
+}
+#center #center_right #center_right_main .process_box:nth-child(even) img {
+  float: right;
+}
+#center #center_right #center_right_main .process_box:nth-child(even) div {
+  float: left;
+}
+#center #center_right #center_right_main .process_box img {
+  width: 50%;
+  height: 25rem;
+}
+#center #center_right #center_right_main .process_box div {
+  box-sizing: border-box;
+  width: 50%;
+  padding-left: 2rem;
+}
+#center #center_right #center_right_main .process_box div .flag {
+  padding: 0;
+  position: absolute;
+  top: 1rem;
+  color: #0054A7;
+  font-size: 50px;
+}
+#center #center_right #center_right_main .process_box div .tit {
+  margin: 30px;
+  border-bottom: 1px solid #DDDDDD;
+}
+#center #center_right #center_right_main .process_box div .tit span {
+  font-size: 20px;
+}
+#center #center_right #center_right_main .process_box div .tit span:first-child {
+  font-size: 30px;
+}
+#center #center_right #center_right_main .process_box div .txt {
+  margin-left: 30px;
+  font-size: 15.1px;
+  letter-spacing: 1px;
+}
+@media (max-width: 720px) {
+  #center {
+    display: none;
+  }
+}

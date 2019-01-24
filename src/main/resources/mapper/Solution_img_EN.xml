@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Solution.Solution_img_EN">
+    <insert id="insert_solution_img" parameterType="com.yujing.yujing.pojo.Solution_imgPojo">
+        insert into solution_img_en(id,path,k,sid) values (#{id},#{path},#{k},#{sid})
+    </insert>
+
+    <select id="select_solution_imglist" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Solution_imgPojo">
+        select * from solution_img_en where sid=#{param1}
+    </select>
+</mapper>

@@ -1,0 +1,95 @@
+#banner{
+    background-color: red;
+    height: 360px;
+}
+
+.linecenter(@height){
+    height: @height;
+    line-height: @height;
+}
+
+@center-height:1200px;
+@center_left_width:300px;
+#center{
+    height: @center-height;
+    border-top:5px solid #097CBA;
+    margin-top:-100px;
+    background-color: #fff;
+    #center_left{
+        height: @center-height;
+        // background-color: pink;
+        width: @center_left_width+70px;
+        #center_left_top{
+            margin-top:50px;
+            margin-left: 20px;
+            border-bottom: 1px solid #E5E5E5;
+            p{
+                display: inline-block;
+            }
+            .center_left_top_tit{
+                width: 30px;
+                color:#0670BC;
+                font-size:48px; 
+            }
+            .center_left_top_txt{
+                margin-left: 10px;
+                span{
+                    &:first-child{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        #center_left_list{
+            box-sizing: border-box;
+            width: @center_left_width+50px;
+            margin-top:30px;
+            margin-left: 20px;
+            border:1px solid #E5E5E5;
+            ul{
+                li{
+                    margin: 0 auto;
+                    color:#AEAEAE;
+                    box-sizing: border-box;
+                    width: @center_left_width;
+                    .linecenter(50px);
+                    padding-left: 10px;
+                    border-bottom: 1px dashed #E5E5E5;
+
+                    i{
+                        .linecenter(50px);
+                    }
+
+                    &:hover{
+                        width: 100%;
+                        i{
+                            margin-right: 50px;
+                        }
+                        color:black;
+                        background-color: skyblue;
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+    
+    #center_right{
+        height: @center-height;
+        width: 780px;
+        h3{display:inline;}
+
+        #center_right_top{
+            margin-top:80px;
+            font-size: 18px;
+            padding-bottom: 21px;
+            border-bottom: 1px solid #E5E5E5;
+            i{color:#0D73B8;}
+            a:hover{
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+}

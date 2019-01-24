@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/layui.css"/>
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+</head>
+        <div style="padding: 20px 0px 0px 220px; height: 800px;overflow-y:scroll;" id="bodytext" >
+            <div class="layui-form-item">
+                <label class="layui-form-label">主页展示的第一个类型</label>
+                <div class="layui-input-block">
+                    <input id="type" type="text" name="type" required  lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">主页展示的第二个类型</label>
+                <div class="layui-input-block">
+                    <input id="type2" type="text" name="type" required  lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">主页展示的第三个类型</label>
+                <div class="layui-input-block">
+                    <input id="type3" type="text" name="type" required  lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">主页展示的第四个类型</label>
+                <div class="layui-input-block">
+                    <input id="type4" type="text" name="type" required  lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+                <button id="btn2" onclick="sub()" class="layui-btn">提交</button>
+        </div>
+
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © layui.com - 底部固定区域
+</div>
+</div>
+<script>
+    //JavaScript代码区域
+    layui.use(['element','layer','form','table','laypage'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+        var form = layui.form;
+        var table=layui.table;
+        var laypage=layui.laypage;
+    });
+    function sub() {
+        // 读取 text
+        layer.confirm('真的添加么', function (index) {
+            var object = new Object();
+            object.type = $("#type").val();
+            object.type2 = $("#type2").val();
+            object.type3=$("#type3").val();
+            object.type4 = $('#type4').val();
+            $.ajax({
+                url: "updata_in_type",
+                type: "POST",
+                data: object,
+                success:function () {
+                    inn()
+                }
+            })
+            layer.msg("添加成功")
+
+
+        })
+    }
+</script>
+</body>
+</html>

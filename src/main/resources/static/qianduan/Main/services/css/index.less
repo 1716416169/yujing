@@ -1,0 +1,69 @@
+#center{
+    box-sizing: border-box;
+    height: 90rem;
+    #center_left{
+        #center_left_list{
+            ul{
+                li{
+                    &:hover a{
+                        color: #000;
+                    }
+                }
+            }
+            &:hover a{
+                text-decoration: none !important;
+            }
+            .cliked{
+                a{
+                    color:#4785B5;
+                }
+                &:hover a{
+                    color:#4785B5;
+                }
+            }
+        }
+    }   
+    #center_right{
+        #center_right_main{
+            ul{ 
+                margin-top: 3rem;
+                margin-bottom: 5rem;
+                border: 0.1rem solid #C1C1C1;
+                li{
+                    overflow: hidden;
+                    height: 6rem;
+                    border: 0.1rem solid #C1C1C1;
+                    p{
+                        margin-left: 2rem;
+                    }
+
+                    &:hover .tit{
+                        color:#3390C7;
+                    }
+
+                    &:hover .tit>i{
+                        color:black;
+                    }
+
+                    .tit{
+                        height: 6rem;
+                        line-height: 6rem;
+                        font-size: 1.8rem;               
+                    }
+                    .txt{
+                        margin-top: 2rem;
+                        width: 80%;
+                        line-height: 3rem;
+                    }
+                    .problemslist_icon{
+                        float: right;
+                        width: 2rem;
+                        height: 1rem;
+                        margin-top: 2.5rem;
+                        margin-right: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}

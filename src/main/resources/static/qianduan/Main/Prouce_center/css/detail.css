@@ -1,0 +1,236 @@
+.blue {
+  color: #0072BB;
+}
+#center {
+  height: 125rem;
+}
+#center #center_right #center_right_main input {
+  border: 0;
+  background-color: #0072BB;
+  color: white;
+  border-radius: 5px;
+}
+#center #center_right #center_right_main .top {
+  width: 84rem;
+  height: 40rem;
+}
+#center #center_right #center_right_main .top #bigimg {
+  overflow: hidden;
+  float: left;
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  border: 1px solid #cccccc;
+  margin-right: 20px;
+}
+#center #center_right #center_right_main .top #bigimg #dimg img {
+  transform-origin: left top;
+  width: 100%;
+  height: 100%;
+}
+#center #center_right #center_right_main .top #bigimg #block {
+  width: 8rem;
+  height: 8rem;
+  background: rgba(254, 238, 167, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+#center #center_right #center_right_main .top #zoom {
+  position: relative;
+  float: left;
+  display: none;
+  z-index: 999;
+  overflow: hidden;
+  width: 38rem;
+  height: 40rem;
+}
+#center #center_right #center_right_main .top #zoom img {
+  width: 38rem;
+  height: 40rem;
+  transform-origin: left top;
+  position: absolute;
+  transform: scale(5);
+}
+#center #center_right #center_right_main .top .topright {
+  position: relative;
+  float: left;
+  width: 42rem;
+}
+#center #center_right #center_right_main .top .topright #imglist {
+  float: left;
+  width: 9rem;
+}
+#center #center_right #center_right_main .top .topright #imglist ul li {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  margin-bottom: 1.3rem;
+  border: 1px solid #cccccc;
+  float: left;
+}
+#center #center_right #center_right_main .top .topright #imglist ul li:last-child {
+  margin-bottom: 0;
+}
+#center #center_right #center_right_main .top .topright #imglist ul li img {
+  width: 100%;
+  height: 100%;
+}
+#center #center_right #center_right_main .top .topright #imglist ul .clicked {
+  border: 1px solid #2C6789;
+}
+#center #center_right #center_right_main .top .topright #description {
+  float: left;
+  margin-left: 2rem;
+  width: 30rem;
+}
+#center #center_right #center_right_main .top .topright #description .tit {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: black;
+}
+#center #center_right #center_right_main .top .topright #description span {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  display: block;
+  color: #656666;
+}
+#center #center_right #center_right_main .top .topright #description p {
+  margin: 1.8rem 0;
+}
+#center #center_right #center_right_main .top .topright #description p:first-child {
+  margin-top: -10px;
+}
+#center #center_right #center_right_main .top .topright #description #contactus {
+  position: absolute;
+  bottom: 0;
+  height: 4rem;
+  line-height: 4rem;
+  width: 15rem;
+  background-color: #0072bc;
+  border-radius: 1rem;
+}
+#center #center_right #center_right_main #input_turn {
+  height: 5rem;
+  margin-top: 3rem;
+}
+#center #center_right #center_right_main #input_turn input {
+  width: 41rem;
+  background-color: #F1F1F1;
+  color: #000;
+  height: 5rem;
+  line-height: 5rem;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+}
+#center #center_right #center_right_main #input_turn input:hover {
+  color: white;
+  background-color: #0072bc;
+}
+#center #center_right #center_right_main #input_turn input:first-child {
+  float: left;
+  margin-right: 2rem;
+}
+#center #center_right #center_right_main #input_turn input:last-child {
+  float: right;
+}
+#center #center_right #center_right_main #bottom {
+  margin-top: 3rem;
+}
+#center #center_right #center_right_main #bottom #selectlist {
+  height: 6rem;
+}
+#center #center_right #center_right_main #bottom #selectlist div {
+  background-color: #E6E6E6;
+  float: left;
+  width: 21rem;
+  height: 6rem;
+  line-height: 6rem;
+  text-align: center;
+  font-size: 18px;
+}
+#center #center_right #center_right_main #bottom #selectlist div:hover {
+  background-color: #0072BB;
+  color: white;
+}
+#center #center_right #center_right_main #bottom #selectlist .line {
+  position: absolute;
+  float: left;
+  width: 0.1rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+#center #center_right #center_right_main #bottom #selectlist .on {
+  background-color: #0072BB;
+  color: white;
+}
+#center #center_right #center_right_main #bottom .selecton {
+  display: block !important;
+}
+#center #center_right #center_right_main #bottom .selectbox {
+  display: none;
+  width: 100%;
+  height: 40rem;
+  margin-top: 3rem;
+  float: left;
+}
+#center #center_right #center_right_main #bottom .selectbox .bigger {
+  font-size: 18px;
+  font-weight: 700;
+}
+#center #center_right #center_right_main #bottom .selectbox .left {
+  height: 40rem;
+  float: left;
+  width: 42rem;
+  border: 1px solid #C3C3C3;
+}
+#center #center_right #center_right_main #bottom .selectbox .left img {
+  width: 100%;
+  height: 100%;
+}
+#center #center_right #center_right_main #bottom .selectbox .right {
+  padding-top: 0px;
+  padding-left: 20px;
+  height: 40rem;
+  width: 42   rem;
+  border: 1px solid #C3C3C3;
+  float: left;
+}
+#center #center_right #center_right_main #bottom .selectbox .right p {
+  margin: 3rem 0;
+  line-height: 3rem;
+}
+#center #center_right #center_right_main #bottom .selectbox img {
+  width: 100%;
+}
+#center #center_right #center_right_main #bottom #selectbox_process {
+  width: 84rem;
+}
+#center #center_right #center_right_main #bottom #selectbox_process ol li {
+  float: left;
+  margin-bottom: 3rem;
+}
+#center #center_right #center_right_main #bottom #selectbox_process ol li:nth-child(odd) {
+  margin-right: 2rem;
+}
+#center #center_right #center_right_main #bottom #selectbox_process .selectbox_process_box {
+  width: 41rem;
+  height: 28rem;
+  background-color: #e6e6e6;
+}
+#center #center_right #center_right_main #bottom #selectbox_process .selectbox_process_txt {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  width: 41rem;
+  line-height: 2.5rem;
+}
+#center #center_right #center_right_main #bottom #selectbox_show {
+  width: 84rem;
+  height: 48rem;
+  font-size: 1.68rem;
+  line-height: 3.6rem;
+  color: #666666;
+}

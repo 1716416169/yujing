@@ -1,0 +1,8 @@
+@media (max-width: 720px) {
+  #center {
+    display: none;
+  }
+  .text_center {
+    text-align: center;
+  }
+}

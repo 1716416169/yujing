@@ -1,0 +1,83 @@
+.linecenter(@height){
+    height: @height;
+    line-height: @height;
+}
+
+#center{
+    #center_right{
+        #center_right_main{
+            ul{
+                width: 100%;
+                margin-top: 2rem;
+                li{
+                    a:hover{
+                        color: #0070BB;
+                    }
+                    height: 27rem;
+                    width: 26.5rem;
+                    box-sizing: border-box;
+                    float: left;
+                    margin: 0  2.2rem 5rem 0;
+                    &:nth-child(7),
+                    &:nth-child(8),
+                    &:nth-child(9){
+                        margin-bottom: 0rem;
+                    }
+                    &:nth-child(3n){
+                        margin-right: 0rem;
+                    }
+                    img{width: 26.5rem;}
+                    span{
+                        margin-top:1rem;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        
+        #center_right_bottom{
+            margin:3rem 0;
+            text-align: center;
+            input,
+            .spanbottom{
+                .linecenter(3rem);
+                background-color: white;
+                border:  0.1rem solid #E7E7E7;
+            }
+
+            input{
+                width: 5rem;
+                color: #6C6C6C; 
+                &:hover{
+                    background-color: #0072A0;
+                    color:white;
+                }  
+            }
+
+            .bottom_hover{
+                background-color: #0072BB;
+                color:white;
+                &:hover{
+                    background-color: #0070BB;
+                    color:white;
+                }
+            }
+
+            #center_right_bottom_list{
+                display: inline-block;
+            }
+            
+            .spanbottom{
+                width: 7rem;
+                display: inline-block;
+                i{
+                    .linecenter(3rem);
+                }
+                &:hover{
+                    background-color: #d8d8d8;
+                }
+            }
+        }
+    }
+}

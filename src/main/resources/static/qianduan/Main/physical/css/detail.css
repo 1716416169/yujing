@@ -1,0 +1,34 @@
+#center {
+  margin-bottom: 0;
+  height: 800px;
+}
+#center #center_right {
+  position: relative;
+}
+#center #center_right #center_right_main {
+  height: 75rem;
+}
+#center #center_right #center_right_main #bigimgbox {
+  width: 84rem;
+  height: 45rem;
+  margin-bottom: 3rem;
+}
+#center #center_right #center_right_main #bigimgbox img {
+  width: 84rem;
+  height: 45rem;
+}
+#center #center_right #center_right_main #imglist {
+  width: 84rem;
+  height: 12.5rem;
+}
+#center #center_right #center_right_main #imglist img {
+  height: 14.7rem;
+  width: 26.1rem;
+  margin-right: 2rem;
+}
+#center #center_right #center_right_main #imglist img:last-child {
+  margin-right: 0;
+}
+#center #center_right #center_right_main #imglist img:hover {
+  box-shadow: 0 0 10px #0072BB;
+}

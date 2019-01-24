@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Case.Case_EN">
+    <insert id="insert_case" parameterType="com.yujing.yujing.pojo.CasePojo" >
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into ca_en(id,name,type,path) value (#{id},#{name},#{type},#{path})
+    </insert>
+
+    <select id="select_case" resultType="com.yujing.yujing.pojo.CasePojo">
+        select * from ca_en
+    </select>
+
+    <delete id="delete_case" parameterType="com.yujing.yujing.pojo.CasePojo">
+        delete from ca_en where id=#{id}
+    </delete>
+
+    <delete id="delete_cases" parameterType="java.util.List">
+        delete from ca_en where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+
+    <select id="select_caselimit" resultType="com.yujing.yujing.pojo.CasePojo">
+      select * from ca_en limit ${param1},${param2}
+    </select>
+
+    <select id="select_count_case" resultType="java.lang.Integer">
+        select count(*) from ca_en
+    </select>
+</mapper>

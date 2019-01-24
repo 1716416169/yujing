@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/layui.css" />
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">宇景后台管理系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    管理员
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">首页</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="inn()">产品中心展示类别</a></dd>
+                        <dd><a href="javascript:;" onclick="inn_EN()">产品中心展示类别_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">产品中心</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="product()">产品管理</a></dd>
+                        <dd><a href="javascript:;" onclick="product_EN()">产品管理_英文</a></dd>
+
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">解决方案</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="solution()">解决方案编辑</a></dd>
+                        <dd><a href="javascript:;" onclick="solution_EN()">解决方案编辑_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">实物案例</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="ca()">实物案例编辑</a></dd>
+                        <dd><a href="javascript:;" onclick="ca_EN()">实物案例编辑_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">技术服务</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="problem()">常见问题</a></dd>
+                        <dd><a href="javascript:;" onclick="problem_EN()">常见问题_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="flow()">服务流程</a></dd>
+                        <dd><a href="javascript:;" onclick="flow_EN()">服务流程_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="support()">服务支持</a></dd>
+                        <dd><a href="javascript:;" onclick="support_EN()">服务支持_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">企业介绍</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="introduce()">公司介绍</a></dd>
+                        <dd><a href="javascript:;" onclick="introduce_EN()">公司介绍_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="seniority()">企业资历</a></dd>
+                        <dd><a href="javascript:;" onclick="seniority_EN()">企业资历_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="culture()">企业文化</a></dd>
+                        <dd><a href="javascript:;" onclick="culture_EN()">企业文化_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="environmental()">公司环境</a></dd>
+                        <dd><a href="javascript:;" onclick="environmental_EN()">公司环境_英文</a></dd>
+                        <dd><a href="javascript:;" onclick="video()">公司视频</a></dd>
+                        <dd><a href="javascript:;" onclick="video_EN()">公司视频_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">新闻资讯</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="news()">新闻</a></dd>
+                        <dd><a href="javascript:;" onclick="news_EN()">新闻_英文</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">联系我们</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" onclick="contact_us()">相关信息查看</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <section id="content">
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;" id="bodytext">内容主体区域</div>
+    </div>
+    </section>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+
+    function seniority() {
+        $("#bodytext").remove();
+        $("#content").load("seniority");
+    }
+
+    function video() {
+        $("#bodytext").remove();
+        $("#content").load("video");
+    }
+    function product() {
+        $("#bodytext").remove();
+        $("#content").load("product");
+    }
+    function solution() {
+        $("#bodytext").remove();
+        $("#content").load("solution");
+    }
+
+    function contact_us() {
+        $("#bodytext").remove();
+        $("#content").load("contact_us");
+    }
+
+    function news() {
+        $("#bodytext").remove();
+        $("#content").load("news");
+    }
+
+    function ca() {
+        $("#bodytext").remove();
+        $("#content").load("case");
+    }
+    function environmental() {
+        $("#bodytext").remove();
+        $("#content").load("environmental");
+    }
+    function problem() {
+        $("#bodytext").remove();
+        $("#content").load("problem");
+    }
+    function support(){
+        $("#bodytext").remove();
+        $("#content").load("support");
+    }
+    function flow(){
+        $("#bodytext").remove();
+        $("#content").load("flow");
+    }
+    function introduce(){
+        $("#bodytext").remove();
+        $("#content").load("introduce");
+    }
+    function culture(){
+        $("#bodytext").remove();
+        $("#content").load("culture");
+    }
+    function product(){
+        $("#bodytext").remove();
+        $("#content").load("product");
+    }
+    /////////////////////////
+
+    function seniority_EN() {
+        $("#bodytext").remove();
+        $("#content").load("seniority_EN");
+    }
+
+    function video_EN() {
+        $("#bodytext").remove();
+        $("#content").load("video_EN");
+    }
+    function product_EN() {
+        $("#bodytext").remove();
+        $("#content").load("product_EN");
+    }
+    function solution_EN() {
+        $("#bodytext").remove();
+        $("#content").load("solution_EN");
+    }
+
+    function contact_us_EN() {
+        $("#bodytext").remove();
+        $("#content").load("contact_us_EN");
+    }
+
+    function news_EN() {
+        $("#bodytext").remove();
+        $("#content").load("news_EN");
+    }
+
+    function ca_EN() {
+        $("#bodytext").remove();
+        $("#content").load("case_EN");
+    }
+    function environmental_EN() {
+        $("#bodytext").remove();
+        $("#content").load("environmental_EN");
+    }
+    function problem_EN() {
+        $("#bodytext").remove();
+        $("#content").load("problem_EN");
+    }
+    function support_EN(){
+        $("#bodytext").remove();
+        $("#content").load("support_EN");
+    }
+    function flow_EN(){
+        $("#bodytext").remove();
+        $("#content").load("flow_EN");
+    }
+    function introduce_EN(){
+        $("#bodytext").remove();
+        $("#content").load("introduce_EN");
+    }
+    function culture_EN(){
+        $("#bodytext").remove();
+        $("#content").load("culture_EN");
+    }
+    function product_EN(){
+        $("#bodytext").remove();
+        $("#content").load("product_EN");
+    }
+    function inn() {
+        $("#bodytext").remove();
+        $("#content").load("in");
+    }
+    function inn_EN() {
+        $("#bodytext").remove();
+        $("#content").load("in_EN");
+    }
+
+</script>
+</body>
+</html>

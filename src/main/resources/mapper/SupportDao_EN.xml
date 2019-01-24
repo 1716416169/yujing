@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.SupportDao_EN" >
+    <select id="selectsupport" resultType="com.yujing.yujing.pojo.Support">
+        select * from support_en
+    </select>
+    <insert id="insertsupport" parameterType="com.yujing.yujing.pojo.Support">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into support_en (name,img,text) values(#{name},#{img},#{text})
+    </insert>
+    <delete id="deletesupport" parameterType="com.yujing.yujing.pojo.Support">
+        delete from support_en where id = #{id}
+    </delete>
+    <select id="selectcountsupport" resultType="java.lang.Integer">
+        select count(*) from support_en
+    </select>
+    <select id="selectsupportlimit" resultType="com.yujing.yujing.pojo.Support">
+      select * from support_en limit ${param1},${param2}
+    </select>
+    <delete id="deletesupports" parameterType="java.util.List">
+        delete from support_en where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+</mapper>
+

@@ -1,0 +1,26 @@
+#center {
+  height: 1100px;
+}
+#center #center_right #center_right_main ul li {
+  float: left;
+  width: 41rem;
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+#center #center_right #center_right_main ul li:nth-child(2),
+#center #center_right #center_right_main ul li:nth-child(4),
+#center #center_right #center_right_main ul li:nth-child(6) {
+  margin-right: 0;
+}
+#center #center_right #center_right_main ul li a:hover {
+  color: #0072BB;
+}
+#center #center_right #center_right_main ul li img {
+  width: 100% !important;
+  height: 26.5rem;
+}
+#center #center_right #center_right_main ul li span {
+  margin: 2rem 0;
+  text-align: center;
+  display: block;
+}

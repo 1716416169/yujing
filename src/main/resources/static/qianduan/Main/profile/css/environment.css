@@ -1,0 +1,37 @@
+#center #center_left #center_left_list ul li:hover a {
+  color: #000;
+}
+#center #center_left #center_left_list:hover a {
+  text-decoration: none !important;
+}
+#center #center_left #center_left_list .cliked a {
+  color: #4785B5;
+}
+#center #center_left #center_left_list .cliked:hover a {
+  color: #4785B5;
+}
+#center #center_right #center_right_main .compyimgbox {
+  margin-bottom: 30px;
+  position: relative;
+}
+#center #center_right #center_right_main .compyimgbox:hover div {
+  display: block;
+}
+#center #center_right #center_right_main .compyimgbox img {
+  width: 100%;
+  height: 420px;
+}
+#center #center_right #center_right_main .compyimgbox div {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  background-color: rgba(0, 113, 188, 0.5);
+}
+#center #center_right #center_right_main .compyimgbox div .name {
+  height: 45px;
+  line-height: 45px;
+  color: white;
+}

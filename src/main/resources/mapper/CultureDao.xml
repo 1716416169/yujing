@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.CultureDao" >
+    <select id="selectculture" resultType="com.yujing.yujing.pojo.Culture">
+        select * from culture
+    </select>
+    <insert id="insertculture" parameterType="com.yujing.yujing.pojo.Culture">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into culture (name,img,text) values(#{name},#{img},#{text})
+    </insert>
+    <delete id="deleteculture" parameterType="com.yujing.yujing.pojo.Culture">
+        delete from culture where id = #{id}
+    </delete>
+    <select id="selectcountculture" resultType="java.lang.Integer">
+        select count(*) from culture
+    </select>
+    <select id="selectculturelimit" resultType="com.yujing.yujing.pojo.Culture">
+      select * from culture limit ${param1},${param2}
+    </select>
+    <delete id="deletecultures" parameterType="java.util.List">
+        delete from culture where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+</mapper>
+

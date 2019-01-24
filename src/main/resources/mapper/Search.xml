@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Search">
+    <select id="search_case_byname" parameterType="java.lang.String" resultType="com.yujing.yujing.pojo.CasePojo">
+        select * from ca where name=#{param1};
+    </select>
+    <select id="search_news_byname" parameterType="java.lang.String" resultType="com.yujing.yujing.pojo.NewsPojo">
+        select * from news where name=#{param1};
+    </select>
+<!--    <select id="serch_product_byname" parameterType="java.lang.String" resultType="">
+        select * from product where name=#{param1};
+    </select>-->
+    <select id="search_solution_byname" parameterType="java.lang.String" resultType="com.yujing.yujing.pojo.SolutionPojo">
+        select * from solution where name=#{param1};
+    </select>
+</mapper>

@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.EnvironmentalDao_EN" >
+    <select id="selectenvironmental" resultType="com.yujing.yujing.pojo.Environmental">
+        select * from environmental_en
+    </select>
+    <insert id="insertenvironmental" parameterType="com.yujing.yujing.pojo.Environmental">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into environmental_en (name,img) values(#{name},#{img})
+    </insert>
+    <delete id="deleteenvironmental" parameterType="com.yujing.yujing.pojo.Environmental">
+        delete from environmental_en where id = #{id}
+    </delete>
+    <select id="selectcountenvironmental" resultType="java.lang.Integer">
+        select count(*) from environmental_en
+    </select>
+    <select id="selectenvironmentallimit" resultType="com.yujing.yujing.pojo.Environmental">
+      select * from environmental_en limit ${param1},${param2}
+    </select>
+    <delete id="deleteenvironmentals" parameterType="java.util.List">
+        delete from environmental_en where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+</mapper>
+

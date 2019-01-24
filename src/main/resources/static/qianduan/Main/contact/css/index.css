@@ -1,0 +1,96 @@
+#center {
+  height: 1200px;
+}
+#center #center_left #center_left_list .clicked {
+  color: #4785B5;
+}
+#center #center_left #center_left_list .clicked:hover {
+  color: #4785B5;
+}
+#center #center_right #center_right_main .top div {
+  float: left;
+  border: 1px solid #cccccc;
+  position: relative;
+  width: 28rem;
+  height: 22rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+#center #center_right #center_right_main .top div:hover {
+  box-shadow: 0 0 10px #cccccc;
+}
+#center #center_right #center_right_main .top div .tit {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+#center #center_right #center_right_main .top div .txt {
+  width: 100%;
+  position: absolute;
+  top: 70%;
+  text-align: center;
+}
+#center #center_right #center_right_main .top .icon {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+}
+#center #center_right #center_right_main .map {
+  margin-top: 30px;
+  width: 100%;
+}
+#center #center_right #contact {
+  margin-top: 30px;
+}
+#center #center_right #contact div {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+#center #center_right #contact .namebox input,
+#center #center_right #contact .telbox input,
+#center #center_right #contact .emailbox input {
+  border: solid 1px #a7a7a7;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  text-indent: 1em;
+  border-radius: 1rem;
+}
+#center #center_right #contact .telbox,
+#center #center_right #contact .emailbox {
+  width: 41rem;
+}
+#center #center_right #contact .telbox input,
+#center #center_right #contact .emailbox input {
+  width: 100%;
+}
+#center #center_right #contact .telbox {
+  margin-right: 2%;
+}
+#center #center_right #contact .namebox input {
+  width: 100%;
+}
+#center #center_right #contact .suggestbox textarea {
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  width: 84rem;
+  height: 17.5rem;
+  padding: 1rem;
+}
+#center #center_right #contact .sumbit {
+  margin-top: 10px;
+  border: 0;
+  color: white;
+  font-size: 18px;
+  background-color: #0072bc;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 15px;
+}

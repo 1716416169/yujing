@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.FlowDao" >
+    <select id="selectflow" resultType="com.yujing.yujing.pojo.Flow">
+        select * from flow
+    </select>
+    <insert id="insertflow" parameterType="com.yujing.yujing.pojo.Flow">
+        insert into flow (id,name,english,text,img) values(#{id},#{name},#{english},#{text},#{img})
+    </insert>
+    <delete id="deleteflow" parameterType="com.yujing.yujing.pojo.Flow">
+        delete from flow where id = #{id}
+    </delete>
+    <select id="selectcountflow" resultType="java.lang.Integer">
+        select count(*) from flow
+    </select>
+    <select id="selectflowlimit" resultType="com.yujing.yujing.pojo.Flow">
+      select * from flow limit ${param1},${param2}
+    </select>
+    <delete id="deleteflows" parameterType="java.util.List">
+        delete from flow where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+</mapper>
+

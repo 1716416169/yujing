@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Case.Case_img_EN">
+    <insert id="insert_case_img" parameterType="com.yujing.yujing.pojo.Case_imgPojo">
+        insert into case_img_en(id,path,k,cid) values (#{id},#{path},#{k},#{cid})
+    </insert>
+
+    <select id="select_case_imglist" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Case_imgPojo">
+        select * from case_img_en where cid=#{param1}
+    </select>
+</mapper>

@@ -1,0 +1,200 @@
+
+.linecenter(@height){
+    height: @height;
+    line-height: @height;
+}
+
+
+#banner{
+    img{
+        margin-top: -1rem;
+        max-height: 60rem;
+        min-height: 30rem;
+        width: 100%;
+    }
+    
+}
+
+.left_arrowr{
+    float: right;
+    width: 3px;
+    height: 6px;
+    margin-top: 23px;
+}
+
+#center{
+    clear: both;
+    width: 120rem;
+    left: 50%;
+    margin-left: -60rem;
+    position: relative;
+    box-sizing: border-box;
+    top:-5rem;
+    padding-left: 3rem;
+    border-top:5px solid #097CBA;
+    margin-bottom: 5rem;
+    background-color: #fff;
+    z-index: auto;
+    .topmap{
+        margin-right:1rem;
+    }
+    #center_left{
+        float: left;
+        width: 25rem;
+        #center_left_top{
+            overflow: hidden;
+            margin-top:3.3rem;
+            height: 6.5rem;
+            border-bottom: 1px solid #E5E5E5;
+            p{
+                display: inline-block;
+            }
+            .center_left_top_tit{
+                color:#0670BC;  
+                font-size: 4.5rem;
+            }
+            .center_left_top_txt{
+                margin-left: 1rem;
+                span{
+                    &:first-child{
+                        font-weight: 700;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        #center_left_list{
+            margin-top:2.1rem;
+            ul{
+                border:1px solid #E5E5E5;
+                li{
+                    padding: 0 2.1rem;
+                    color: #808080;
+                    a{
+                        color: #808080;
+                    }
+                    box-sizing: border-box;
+                    .linecenter(50px);
+                    p{
+                        border-bottom: 1px dashed #E5E5E5;
+                    }   
+                    
+                    i{
+                        .linecenter(50px);
+                    }
+                    &:hover{
+                        color:black;
+                        background-color: skyblue;
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    #center_right{
+        float: left;
+        margin-left: 5rem;
+        width: 84rem;
+        #center_right_main{
+            margin-top: 2.3rem;
+        }
+        #center_right_top{
+            h3{display:inline;font-weight: 700;font-size:1.8rem;}
+            margin-top:4.6rem;
+            font-size: 1.6rem;
+            height:5rem;
+            padding-bottom: 2.1rem;
+            border-bottom: 1px solid #E5E5E5;
+            a:hover{
+                border-bottom: 1px solid black;
+            }
+            span:first-child{
+                float: left;
+            }
+            span:last-child{
+                float: right;
+            }
+        }
+        
+        #center_right_bottom{
+            width: 100%;
+            display: block;
+            margin-top: 5rem;
+            height: 4rem;
+            text-align: center; 
+            input,
+            .spanbottom{
+                .linecenter(4rem);
+                background-color: white;
+                border:  1px solid #E7E7E7;
+            }
+
+            input{
+                width: 4rem;
+                color: #6C6C6C; 
+                &:hover{
+                    background-color: #0072A0;
+                    color:white;
+                }  
+            }
+
+            .bottom_hover{
+                background-color: #0072BB;
+                color:white;
+                &:hover{
+                    background-color: #0070BB;
+                    color:white;
+                }
+            }
+
+            #center_right_bottom_list{
+                float: left;
+                height: 4rem;
+            }
+            
+            .spanbottom{
+                float: left;
+                width: 7rem;
+                position: relative;
+                &:first-child{
+                    margin-left: 24.5rem;
+                    margin-right: 1rem;
+                }
+                &:last-child{
+                    margin-left: 1rem;
+                }
+                
+                img{
+                    position: absolute;
+                    width: 12px;
+                    height: 14px;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -7px;
+                    margin-top: -6px;
+                }
+                &:hover{
+                    background-color: #d8d8d8;
+                }
+            }
+        }
+
+        #center_right_turn{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .turn{
+                background-color: #fff;
+                width: 320px;
+                height: 50px;
+                border-radius: 10px;
+                &:hover{
+                    background-color: #0072BB;
+                    color:white;
+                }
+            }
+        }
+    }
+}

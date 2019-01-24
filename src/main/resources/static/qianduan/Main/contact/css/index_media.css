@@ -1,0 +1,49 @@
+@media (max-width: 720px) {
+  #center {
+    display: none;
+  }
+  .text_center {
+    text-align: center;
+  } 
+  .visible-xs-block .top div {
+	  text-align: center;
+	  height: 150px;
+	  border: 1px solid #cccccc;
+	  position: relative;
+	  width: 33.33%;
+	  float: left;
+	  background-color: #fff;
+  } 
+  .text_center{
+  	text-align: center;
+  }
+  .marginauto{
+  	margin: auto;
+  }
+ .visible-xs-block input,textarea{
+				border: 0px;
+	}
+	.input_sub{
+		width: 100%;
+		background-color: #0072BB;
+		height: 40px;
+		border-radius: 10px;
+		text-align: center;
+		color: white;
+	}
+	.input_wid100{
+		width: 100%;
+	}
+	.visible-xs-block .container .layui-row form p{
+		font-size: 20px;
+	}
+	
+	.visible-xs-block .container .layui-row  .top .hovereffect .txt{
+		 width: 100%;
+    word-wrap: break-word;
+	}
+	.text_center_lianxi{
+		font-weight: 400;
+		font-size: 20;
+	}
+}

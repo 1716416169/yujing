@@ -1,0 +1,8 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.News.News_type_EN">
+    <select id="select_type" resultType="com.yujing.yujing.pojo.News_typePojo">
+        select * from news_type_en
+    </select>
+</mapper>

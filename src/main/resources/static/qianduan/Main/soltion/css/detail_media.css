@@ -1,0 +1,25 @@
+@media (max-width: 720px) {
+  #center {
+    display: none;
+  }
+  .text_center {
+    text-align: center;
+  }  
+  .visible-xs-block .turn{
+  	   width: 48%;
+            background-color: #F1F1F1;
+            color: #000;
+            height: 5rem;
+            line-height: 5rem;
+            border-radius: 5rem;
+  }
+  .visible-xs-block .turn:hover{
+  	  color: white;
+            background-color: #0B73B4;
+  }
+  .margin_top10{
+  	display: flex;
+  	flex-flow: row;
+  }
+ 
+}

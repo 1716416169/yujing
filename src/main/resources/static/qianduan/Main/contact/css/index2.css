@@ -1,0 +1,95 @@
+#center {
+  height: 1300px;
+}
+#center #center_left #center_left_list .clicked {
+  color: #4785B5;
+}
+#center #center_left #center_left_list .clicked:hover {
+  color: #4785B5;
+}
+#center #center_right #center_right_main .top div {
+  height: 293.3px;
+  border: 1px solid #cccccc;
+  position: relative;
+  width: 33.33%;
+  float: left;
+  background-color: #fff;
+}
+#center #center_right #center_right_main .top div:hover {
+  box-shadow: 0 0 10px #cccccc;
+}
+#center #center_right #center_right_main .top div .tit {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+#center #center_right #center_right_main .top div .txt {
+  width: 100%;
+  position: absolute;
+  top: 70%;
+  text-align: center;
+}
+#center #center_right #center_right_main .top img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -32px;
+  width: 64px;
+  height: 64px;
+}
+#center #center_right #center_right_main .map {
+  margin-top: 30px;
+  width: 100%;
+}
+#center #center_right #contact {
+  margin-top: 30px;
+}
+#center #center_right #contact div {
+  margin-top: 30px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#center #center_right #contact .namebox input,
+#center #center_right #contact .telbox input,
+#center #center_right #contact .emailbox input {
+  border: 1px solid black;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 1em;
+  border-radius: 10px;
+}
+#center #center_right #contact .telbox,
+#center #center_right #contact .emailbox {
+  width: 48%;
+}
+#center #center_right #contact .telbox input,
+#center #center_right #contact .emailbox input {
+  width: 100%;
+}
+#center #center_right #contact .telbox {
+  margin-right: 2%;
+}
+#center #center_right #contact .namebox input {
+  width: 100%;
+}
+#center #center_right #contact .suggestbox textarea {
+  box-sizing: border-box;
+  border-radius: 15px;
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+}
+#center #center_right #contact .sumbit {
+  margin-top: 10px;
+  border: 0;
+  color: white;
+  font-size: 18px;
+  background-color: #0072BB;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 15px;
+}

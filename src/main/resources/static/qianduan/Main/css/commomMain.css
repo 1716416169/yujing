@@ -1,0 +1,182 @@
+#banner img {
+  margin-top: -1rem;
+  max-height: 60rem;
+  min-height: 30rem;
+  width: 100%;
+}
+.left_arrowr {
+  float: right;
+  width: 3px;
+  height: 6px;
+  margin-top: 23px;
+}
+#center {
+  clear: both;
+  width: 120rem;
+  left: 50%;
+  margin-left: -60rem;
+  position: relative;
+  box-sizing: border-box;
+  top: -5rem;
+  padding-left: 3rem;
+  border-top: 5px solid #097CBA;
+  margin-bottom: 5rem;
+  background-color: #fff;
+  z-index: auto;
+}
+#center .topmap {
+  margin-right: 1rem;
+}
+#center #center_left {
+  float: left;
+  width: 25rem;
+}
+#center #center_left #center_left_top {
+  overflow: hidden;
+  margin-top: 3.3rem;
+  height: 6.5rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+#center #center_left #center_left_top p {
+  display: inline-block;
+}
+#center #center_left #center_left_top .center_left_top_tit {
+  color: #0670BC;
+  font-size: 4.5rem;
+}
+#center #center_left #center_left_top .center_left_top_txt {
+  margin-left: 1rem;
+}
+#center #center_left #center_left_top .center_left_top_txt span:first-child {
+  font-weight: 700;
+  font-size: 16px;
+}
+#center #center_left #center_left_list {
+  margin-top: 2.1rem;
+}
+#center #center_left #center_left_list ul {
+  border: 1px solid #E5E5E5;
+}
+#center #center_left #center_left_list ul li {
+  padding: 0 2.1rem;
+  color: #808080;
+  box-sizing: border-box;
+  height: 50px;
+  line-height: 50px;
+}
+#center #center_left #center_left_list ul li a {
+  color: #808080;
+}
+#center #center_left #center_left_list ul li p {
+  border-bottom: 1px dashed #E5E5E5;
+}
+#center #center_left #center_left_list ul li i {
+  height: 50px;
+  line-height: 50px;
+}
+#center #center_left #center_left_list ul li:hover {
+  color: black;
+  background-color: skyblue;
+}
+#center #center_right {
+  float: left;
+  margin-left: 5rem;
+  width: 84rem;
+}
+#center #center_right #center_right_main {
+  margin-top: 2.3rem;
+}
+#center #center_right #center_right_top {
+  margin-top: 4.6rem;
+  font-size: 1.6rem;
+  height: 5rem;
+  padding-bottom: 2.1rem;
+  border-bottom: 1px solid #E5E5E5;
+}
+#center #center_right #center_right_top h3 {
+  display: inline;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+#center #center_right #center_right_top a:hover {
+  border-bottom: 1px solid black;
+}
+#center #center_right #center_right_top span:first-child {
+  float: left;
+}
+#center #center_right #center_right_top span:last-child {
+  float: right;
+}
+#center #center_right #center_right_bottom {
+  width: 100%;
+  display: block;
+  margin-top: 5rem;
+  height: 4rem;
+  text-align: center;
+}
+#center #center_right #center_right_bottom input,
+#center #center_right #center_right_bottom .spanbottom {
+  height: 4rem;
+  line-height: 4rem;
+  background-color: white;
+  border: 1px solid #E7E7E7;
+}
+#center #center_right #center_right_bottom input {
+  width: 4rem;
+  color: #6C6C6C;
+}
+#center #center_right #center_right_bottom input:hover {
+  background-color: #0072A0;
+  color: white;
+}
+#center #center_right #center_right_bottom .bottom_hover {
+  background-color: #0072BB;
+  color: white;
+}
+#center #center_right #center_right_bottom .bottom_hover:hover {
+  background-color: #0070BB;
+  color: white;
+}
+#center #center_right #center_right_bottom #center_right_bottom_list {
+  float: left;
+  height: 4rem;
+}
+#center #center_right #center_right_bottom .spanbottom {
+  float: left;
+  width: 7rem;
+  position: relative;
+}
+#center #center_right #center_right_bottom .spanbottom:first-child {
+  margin-left: 24.5rem;
+  margin-right: 1rem;
+}
+#center #center_right #center_right_bottom .spanbottom:last-child {
+  margin-left: 1rem;
+}
+#center #center_right #center_right_bottom .spanbottom img {
+  position: absolute;
+  width: 12px;
+  height: 14px;
+  top: 50%;
+  left: 50%;
+  margin-left: -7px;
+  margin-top: -6px;
+}
+#center #center_right #center_right_bottom .spanbottom:hover {
+  background-color: #d8d8d8;
+}
+#center #center_right #center_right_turn {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+#center #center_right #center_right_turn .turn {
+  background-color: #fff;
+  width: 320px;
+  height: 50px;
+  border-radius: 10px;
+}
+#center #center_right #center_right_turn .turn:hover {
+  background-color: #0072BB;
+  color: white;
+}

@@ -1,0 +1,76 @@
+@media (max-width:768px){
+    .pc{
+        display: none;
+    }
+    .navbar{
+    	margin-bottom: 0;
+    }
+    .navbar-header{
+		height: 70px;
+	}
+	
+	#m-nav{
+		position: relative;
+		z-index: 999;
+	}
+	
+	.navbar-brand{		
+		padding: 10px 50px;
+	}
+	#m-logo{
+		height: 50px;
+		width: 60px;
+	}
+		
+	#example-navbar-collapse {
+		position: absolute;
+		background-color: white;
+		right: 18px;
+	}
+	.small_box{
+		width: 45%;
+		float: left;
+		margin-left: 3%; 
+		height: 154px; 
+		margin-bottom: 10px;		
+	}
+	.small_box span{
+		font-size: 12px;
+	}
+	.small_box img{
+		width: 100%;
+		height: 130px;
+	}
+	.w100{
+		width: 100%;
+	}
+	.height_auto{
+		height: auto;
+	}
+	
+	.mobile_banner img{
+      height: 160px;
+      width: 100%;
+  }
+  .small_box_img {
+  	    width: 45%;
+		float: left;
+		margin-left: 3%; 
+		height: 140px; 
+		margin-bottom: 10px;	
+  }
+  .small_box_img img{
+  	width: 100%;
+		height: 130px;
+  }
+  .dingwei_top{
+      position: relative;  
+  }
+  .dingwei_bottom{
+      position: absolute;  
+  }
+  .visible-xs-block .nav li{
+  	text-decoration: underline red ;
+  	-moz-text-decoration-style: 5px;
+  }
+}

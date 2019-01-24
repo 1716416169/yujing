@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/layui.css"/>
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script type="text/javascript" src="js/wangEditor.min.js"></script>
+</head>
+<body>
+    <div style="padding: 20px 0px 0px 220px; height: 800px;overflow-y:scroll;" id="bodytext">
+        <div class="layui-tab layui-tab-card">
+            <ul class="layui-tab-title">
+                <li class="layui-this">添加公司介绍</li>
+                <li class="layui-this">管理公司介绍</li>
+            </ul>
+            <div class="layui-tab-content" style="height: 750px;overflow-y:scroll; width:1660px;float: left ">
+                <div class="layui-tab-item layui-show" >
+                    <br>
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图片名称</label>
+                            <div class="layui-input-block">
+                                <input id="title" type="text" style="width: 1500px" name="title" required  lay-verify="required" placeholder="请输入图片名称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="layui-upload">
+                        <button type="button" class="layui-btn" id="upload" style="margin-left: 110px">
+                            <i class="layui-icon">&#xe67c;</i>上传图片
+                        </button>
+                    </div>
+                    <div class="layui-upload-list">
+                        <img class="layui-upload-img" id="demo1" style="margin-left: 110px;width: 220px;">
+                    </div>
+                    <div id="toolbar" style="border: 1px solid #ccc"></div>
+                    <div id="fuwenben" style="height: 580px;border: 1px solid #ccc"></div>
+                    <br>
+                    <button id="btn2" onclick="sub()" class="layui-btn">提交</button>
+                </div>
+                <div class="layui-tab-item">
+                    <div class="layui-btn-group demoTable">
+                        <button class="layui-btn" data-type = "getCheckData">删除选中行数据</button>
+                    </div>
+                    <table class="layui-table" lay-data="{width: 1660, height:750, url:'selectintroducelimit_EN'
+                             ,where: {'a': 1, 'b': 10}, id:'idTest',toolbar: 'true'}" lay-filter="demo">
+                        <thead>
+                        <tr>
+                            <th lay-data="{type:'checkbox', width:60}"></th>
+                            <th lay-data="{field:'id',sort: true, width:80}">ID</th>
+                            <th lay-data="{field:'name', width:150}">图片名称</th>
+                            <th lay-data="{field:'text'}">内容</th>
+                            <th lay-data="{fixed:'right', align:'center', width:60, toolbar: '#barDemo'}"></th>
+                        </tr>
+                        </thead>
+                    </table>
+                    <div id="test1"></div>
+                    <script type="text/html" id="barDemo">
+                        <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var content2;
+            var E = window.wangEditor;
+            var editor = new E('#toolbar','#fuwenben');
+            editor.customConfig.menus = [
+                'head',  // 标题
+                'bold',  // 粗体
+                'fontSize',  // 字号
+                'fontName',  // 字体
+                'italic',  // 斜体
+                'underline',  // 下划线
+            ]
+            editor.customConfig.uploadFileName = 'files';
+            editor.create();
+            var count;
+            layui.use(['layer','upload','table','laypage'], function(){
+                var layer = layui.layer;
+                var upload = layui.upload;
+                var table = layui.table;
+                var laypage = layui.laypage;
+                jQuery.ajax({
+                    url:"selectcountintroduce_EN",
+                    type:"get",
+                    dataType:"text",
+                    success:function (res) {
+                        count=res;
+                        laypage.render({
+                            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                            ,count: count//数据总数，从服务端得到
+                            ,limit: 10
+                            ,layout:['count','prev','page','next','limit','refresh','skip']
+                            ,limits: [10,20,30,40,50,60,70,80,90,100]
+                            ,jump: function(obj, first){
+                                //obj包含了当前分页的所有参数，比如：
+                                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                //console.log(obj.limit); //得到每页显示的条数
+                                //首次不执行
+                                if(!first) {
+                                    table.reload('idTest', {     //重加载
+                                        url: 'selectintroducelimit_EN',
+                                        where: {"a": obj.curr, "b": obj.limit},//设定异步数据接口的额外参数
+                                        //,height: 300
+                                    });
+                                }
+                            }
+                        });
+                    }
+                })
+                upload.render({
+                    elem: '#upload' //绑定元素
+                    ,url: 'uploadintroduce_EN' //上传接口
+                    // ,auto: false
+                    // ,bindAction:'#btn2'
+                    ,before:function (obj) {
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function (index,file,result) {
+                            $('#demo1').attr('height','120px');
+                            $('#demo1').attr('src',result);
+                        })
+                    }
+                    ,error: function(){
+                        //请求异常回调
+                        layer.msg("上传失败")
+                    }
+                });
+                //监听工具条
+                table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+                    var data = obj.data; //获得当前行数据
+                    if(obj.event === 'detail'){ //查看
+                        layer.msg('ID：'+ data.id + ' 的查看操作');
+                    } else if(obj.event === 'del'){ //删除
+                        layer.confirm('真的删除么', function(index){
+                            obj.del();
+                            $.ajax({
+                                url:"deleteintroduce_EN",
+                                data:data,
+                                type:"post"
+                            })
+                            layer.close(index);
+                        });
+                    } else if(obj.event === 'edit'){ //编辑
+                        layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                    }
+                });
+                var $ = layui.$, active = {
+                    getCheckData: function(){
+                        layer.confirm('真的删除么',function (index) {
+                            var checkStatus = table.checkStatus('idTest')
+                                ,data = checkStatus.data;//获取选中数据
+                            //console.log(JSON.stringify(data));
+                            //console.log(index)
+                            $.ajax({
+                                url:"deleteintroduces_EN",
+                                data:JSON.stringify(data),//将json数据转为字符串
+                                contentType : 'application/json;charset=utf-8',
+                                type:"post",
+                                success:function () {
+                                    table.reload('idTest', {
+                                        url: 'selectintroduce_EN'
+                                        ,where: {} //设定异步数据接口的额外参数
+                                        //,height: 300
+                                    });
+                                    layer.msg("删除成功")
+                                }
+                            })
+                        })
+                    }
+                    ,getCheckLength: function(){ //获取选中数目
+                        var checkStatus = table.checkStatus('idTest')
+                            ,data = checkStatus.data;
+                        layer.msg('选中了：'+ data.length + ' 个');
+                    }
+                    ,isAll: function(){ //验证是否全选
+                        var checkStatus = table.checkStatus('idTest');
+                        layer.msg(checkStatus.isAll ? '全选': '未全选')
+                    }
+                };
+
+                $('.demoTable .layui-btn').on('click', function(){
+                    var type = $(this).data('type');
+                    active[type] ? active[type].call(this) : '';
+                });
+            });
+            function sub() {
+                // 读取 text
+                layer.confirm('真的添加么', function (index) {
+                    content2 = editor.txt.text()
+                    var object = new Object();
+                    object.name = $("#title").val();
+                    object.text = content2;
+                    var json = editor.txt.getJSON()  // 获取 JSON 格式的内容
+                    $.ajax({
+                        url: "insertintroduce_EN",
+                        type: "POST",
+                        data: object,
+                        success:function f() {
+                            layer.msg("添加成功")
+                            introduce_EN()
+                        }
+                    })
+                })
+            }
+        </script>
+    </div>
+</body>
+</html>

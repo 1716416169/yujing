@@ -1,0 +1,21 @@
+@media (max-width: 720px) {
+  #center {
+    display: none;
+  }
+  #btn {
+    display: -webkit-flex;
+    -webkit-flex-flow: row;
+  }
+  #btn input {
+    width: 48%;
+    background-color: #F1F1F1;
+    color: #000;
+    height: 5rem;
+    line-height: 5rem;
+    border-radius: 5rem;
+  }
+  #btn input:hover {
+    color: white;
+    background-color: #0B73B4;
+  }
+}

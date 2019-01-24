@@ -1,0 +1,24 @@
+#center {
+  box-sizing: border-box;
+  height: 94rem;
+}
+#center #center_left #center_left_list ul li:hover a {
+  color: #000;
+}
+#center #center_left #center_left_list:hover a {
+  text-decoration: none !important;
+}
+#center #center_left #center_left_list .cliked a {
+  color: #4785B5;
+}
+#center #center_left #center_left_list .cliked:hover a {
+  color: #4785B5;
+}
+#center #center_right #center_right_main img {
+  width: 100%;
+}
+#center #center_right #center_right_main p {
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+}

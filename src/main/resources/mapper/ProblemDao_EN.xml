@@ -1,0 +1,30 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.ProblemDao_EN" >
+    <select id="selectproblem" resultType="com.yujing.yujing.pojo.Problem">
+        select * from problem_en
+    </select>
+    <insert id="insertproblem" parameterType="com.yujing.yujing.pojo.Problem">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into problem_en (text,title) values(#{text},#{title})
+    </insert>
+    <delete id="deleteproblem" parameterType="com.yujing.yujing.pojo.Problem">
+        delete from problem_en where id = #{id}
+    </delete>
+    <select id="selectcountproblem" resultType="java.lang.Integer">
+        select count(*) from problem_en
+    </select>
+    <select id="selectproblemlimit" resultType="com.yujing.yujing.pojo.Problem">
+      select * from problem_en limit ${param1},${param2}
+    </select>
+    <delete id="deleteproblems" parameterType="java.util.List">
+        delete from problem_en where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+</mapper>
+

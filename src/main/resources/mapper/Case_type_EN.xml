@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Case.Case_type_EN">
+    <select id="select_case_type" resultType="com.yujing.yujing.pojo.Case_typePojo">
+      select * from case_type_EN
+    </select>
+    <insert id="insert_case_type" parameterType="com.yujing.yujing.pojo.Case_typePojo">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into case_type_en(id,type_name) values (#{id},#{type_name})
+    </insert>
+    
+    <delete id="delete_case_type" parameterType="com.yujing.yujing.pojo.Case_typePojo">
+        delete from case_type_en where id=#{id}
+    </delete>
+</mapper>

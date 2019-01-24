@@ -1,0 +1,41 @@
+#center {
+  margin-bottom: 0;
+}
+#center #center_left #center_left_list .clicked a {
+  color: #0072BB;
+}
+#center #center_left #center_left_list li:hover a {
+  color: #000;
+  text-decoration: none !important;
+}
+#center #center_right {
+  height: 100%;
+  position: relative;
+}
+#center #center_right #center_right_main {
+  width: 100%;
+  text-align: center;
+}
+#center #center_right #center_right_main .tit {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+#center #center_right #center_right_main .describe {
+  margin-bottom: 1rem;
+}
+#center #center_right #center_right_main .describe span {
+  margin-right: 3rem;
+}
+#center #center_right #center_right_main img {
+  width: 100%;
+  height: 400px;
+}
+#center #center_right #center_right_main div {
+  text-align: left;
+  font-size: 1.6rem;
+}
+#center #center_right #center_right_main div p {
+  margin: 1.5rem 0;
+}

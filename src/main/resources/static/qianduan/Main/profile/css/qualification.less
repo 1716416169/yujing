@@ -1,0 +1,56 @@
+#center{
+    height: 1000px;
+    
+    #center_left{
+        #center_left_list{
+            ul{
+                li{
+                    &:hover a{
+                        color: #000;
+                    }
+                }
+            }
+            &:hover a{
+                text-decoration: none !important;
+            }
+            .cliked{
+                a{
+                    color:#4785B5;
+                }
+                &:hover a{
+                    color:#4785B5;
+                }
+            }
+        }
+    }
+
+    #center_right{
+        #center_right_main{
+            margin-top: 30px;
+            ul{
+                li{
+                    width:  27rem;
+                    height: 35rem;
+                    padding: 20px;
+                    border: 1px solid #cccccc;
+                    float: left;
+                    margin-right: 1.5rem;
+                    margin-bottom: 3rem;
+                    &:hover{
+                        box-shadow: 0 0 10px #cccccc;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(6),
+                    &:nth-child(9){
+                        margin-right: 0px;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

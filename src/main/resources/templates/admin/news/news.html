@@ -1,0 +1,275 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/layui.css"/>
+    <script type="text/javascript" src="js/layui.js"></script>
+    <script type="text/javascript" src="js/wangEditor.min.js"></script>
+    <style type="text/css">
+        table,
+        table th,
+        table td{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 20px 0px 0px 220px; height: 800px;overflow-y:scroll;" id="bodytext" >
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this">添加新闻资讯</li>
+            <li onclick="select_solution()">管理新闻资讯</li>
+        </ul>
+        <div class="layui-tab-content" style="height: 720px;overflow-y:scroll; width:1400px;float: left ">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">标题</label>
+                    <div class="layui-input-block">
+                        <input id="title" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">来源</label>
+                    <div class="layui-input-block">
+                        <input id="source" type="text" name="source" required  lay-verify="required" placeholder="请输入来源" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">添加时间</label>
+                        <div class="layui-input-block">
+                            <input id="date" type="text" name="source" required lay-verify="required"
+                                   placeholder="请输入来源" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                <div class="layui-form-item">
+                    <input type="radio" name="type" value="1" title="公司新闻">
+                    <input type="radio" name="type" value="2" title="行业新闻" checked>
+                    <input type="radio" name="type" value="3" title="客户反响">
+                </div>
+                </form>
+                <br>
+                <br>
+                <div id="toolbar" style="border: 1px solid #ccc"></div>
+                <div id="fuwenben" style="height: 600px;border: 1px solid #ccc"></div>
+                <button id="btn2" onclick="sub()" class="layui-btn">提交</button>
+           <!--     <br>
+                <br>
+                <br>
+                <p>预览：</p>
+                <div id="text">
+                </div>
+                <div id="text2">
+                </div>-->
+            </div>
+            <div class="layui-tab-item">
+
+                <div class="layui-btn-group demoTable">
+                    <button class="layui-btn" data-type="getCheckData">删除选中行数据</button>
+                  <!--  <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
+                    <button class="layui-btn" data-type="isAll">验证是否全选</button>-->
+                </div>
+                <table class="layui-table" lay-data="{width: 1300, height:620,url:'select_newslimit',where:{'in1': 1, 'in2': 10}, id:'idTest',toolbar: 'true'}" lay-filter="demo">
+                    <thead>
+                    <tr>
+                        <th lay-data="{type:'checkbox', width:60}"></th>
+                        <th lay-data="{field:'id',  sort: true, width:60}">ID</th>
+                        <th lay-data="{field:'name'}">标题</th>
+                        <th lay-data="{field:'add_date', sort: true}">添加时间</th>
+                        <th lay-data="{field:'source' }">资料来源</th>
+                        <th lay-data="{field:'onclick_number'}">点击数</th>
+                        <th lay-data="{field:'type', sort: true}">类型</th>
+                        <th lay-data="{fixed: 'right', align:'center', toolbar: '#barDemo'}"></th>
+                    </tr>
+                    </thead>
+                </table>
+                <div id="test1"></div>
+                <script type="text/html" id="barDemo">
+                    <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                </script>
+            </div>
+        </div>
+        <div style="float: right;width: 250px">
+            <div>
+                <table class="layui-table" lay-data="{height:160, url:'select_newstype', page:false, id:'test'}" lay-filter="test">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'id', width:40, sort: true}">ID</th>
+                        <th lay-data="{field:'type_name', width:200}">类型名称</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var content;
+        var content2;
+        var E = window.wangEditor;
+        var editor = new E('#toolbar','#fuwenben');
+        editor.customConfig.menus = [
+            'head',  // 标题
+            'bold',  // 粗体
+            'fontSize',  // 字号
+            'fontName',  // 字体
+            'italic',  // 斜体
+            'underline',  // 下划线
+            'strikeThrough',  // 删除线
+            'foreColor',  // 文字颜色
+            'backColor',  // 背景颜色
+            'link',  // 插入链接
+            'list',  // 列表
+            'justify',  // 对齐方式
+            'quote',  // 引用
+            'emoticon',  // 表情
+            'image',  // 插入图片
+            'table',  // 表格
+            'code',  // 插入代码
+            'undo',  // 撤销
+            'redo'  // 重复
+        ]
+        editor.customConfig.uploadImgServer = 'upload';
+        editor.customConfig.uploadFileName = 'file';
+        editor.create();
+        var count;
+        layui.use(['layer','form','table','laypage'], function(){
+            var layer = layui.layer;
+            var form = layui.form;
+            var table=layui.table;
+            var laypage=layui.laypage;
+            jQuery.ajax({
+                url:"select_count_news",
+                type:"get",
+                dataType:"text",
+                success:function (res) {
+                    count=res;
+                    laypage.render({
+                        elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                        ,count: count//数据总数，从服务端得到
+                        ,limit: 10
+                        ,layout:['count','prev','page','next','limit','refresh','skip']
+                        ,limits: [10,20,30,40,50,60,70,80,90,100]
+                        ,jump: function(obj, first){
+                            //obj包含了当前分页的所有参数，比如：
+                            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                            console.log(obj.limit); //得到每页显示的条数
+                            //首次不执行
+                            if(!first) {
+                                table.reload('idTest', {
+                                    url: 'select_newslimit',
+                                    where: {"in1": obj.curr, "in2": obj.limit},//设定异步数据接口的额外参数
+                                    //,height: 300
+                                });
+                            }
+                        }
+                    });
+                }
+            })
+            //监听工具条
+            table.on('tool(demo)', function(obj){
+                var data = obj.data;
+                if(obj.event === 'detail'){
+                    layer.msg('ID：'+ data.id + ' 的查看操作');
+                } else if(obj.event === 'del'){
+                    layer.confirm('真的删除么', function(index){
+                        obj.del();
+                        $.ajax({
+                            url:"delete_news",
+                            data:data,
+                            type:"post"
+                        })
+                        layer.close(index);
+                    });
+                } else if(obj.event === 'edit'){
+                    layer.alert('编辑行：<br>'+ JSON.stringify(data))
+                }
+            });
+
+            var $ = layui.$, active = {
+                getCheckData: function(){ //获取选中数据
+                    layer.confirm('真的删除么',function (index) {
+                        var checkStatus = table.checkStatus('idTest')
+                            ,data = checkStatus.data;
+                        console.log(JSON.stringify(data));
+                        console.log(index)
+                        $.ajax({
+                            url:"delete_newss",
+                            data:JSON.stringify(data),
+                            contentType : 'application/json;charset=utf-8',
+                            type:"post",
+                            success:function () {
+                                table.reload('idTest', {
+                                    url: 'select_newslimit',
+                                    where: {"in1": 1, "in2": 10},
+                                    //,height: 300
+                                });
+                                layer.msg("删除成功")
+                            }
+                        })
+                        //layer.alert(JSON.stringify(data));
+                        /*layer.close(index);*/
+                    })
+                }
+                ,getCheckLength: function(){ //获取选中数目
+                    var checkStatus = table.checkStatus('idTest')
+                        ,data = checkStatus.data;
+                    layer.msg('选中了：'+ data.length + ' 个');
+                }
+                ,isAll: function(){ //验证是否全选
+                    var checkStatus = table.checkStatus('idTest');
+                    layer.msg(checkStatus.isAll ? '全选': '未全选')
+                }
+            };
+
+            $('.demoTable .layui-btn').on('click', function(){
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+        function look() {
+            $("#text").html(content)
+            //$("#text2").html(content2)
+        }
+        function sub() {
+            // 读取 text
+            layer.confirm('真的添加么', function (index) {
+                content = editor.txt.html()
+                content2 = editor.txt.text()
+
+                var object = new Object();
+                object.name = $("#title").val();
+                object.source = $("#source").val();
+                object.add_date=$("#date").val();
+                object.type = $('input[name="type"]:checked').val();
+                object.imgandtext = content;
+                object.text = content2;
+                var json = editor.txt.getJSON()  // 获取 JSON 格式的内容
+                console.log(json)
+                console.log(object)
+                console.log(content)
+                console.log(content2)
+                $.ajax({
+                    url: "insert_news",
+                    type: "POST",
+                    data: object
+                })
+                layer.msg("添加成功")
+
+                news()
+                look()
+            })
+        }
+        function select_solution() {
+            $.ajax({
+                url: "select_news"              　　 //地址，加“/”前缀就是localhost：8080
+            })
+        }
+
+
+    </script>
+</div>
+</body>
+</html>

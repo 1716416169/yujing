@@ -1,0 +1,45 @@
+.nowpos p {
+  color: #0174BD;
+}
+#center {
+  height: 80rem;
+}
+#center #center_right_main ul li {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #F1F1F1;
+}
+#center #center_right_main ul li div {
+  height: 20rem;
+  width: 80rem;
+  height: 16rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  background-color: #fff;
+}
+#center #center_right_main ul li div:hover * {
+  color: black;
+}
+#center #center_right_main ul li div:hover .div_tit {
+  color: #0072bc;
+}
+#center #center_right_main ul li div .div_tit {
+  height: 4rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+#center #center_right_main ul li div span {
+  margin-right: 1rem;
+}
+#center #center_right_main ul li div span img {
+  margin-right: 0.5rem;
+}
+#center #center_right_main ul li div .div_txt {
+  width: 74rem;
+  margin-top: 1rem;
+  line-height: 2rem;
+  font-size: 1.4rem;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.ProductDao" >
+
+   <!-- <resultMap type="com.yujing.yujing.pojo.Product" id="product">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="price" property="price"/>
+        <result column="batch_quantity" property="batch_quantity"/>
+        <result column="guide" property="guide"/>
+        <result column="type" property="type"/>
+        <result column="parameterimg" property="parameterimg"/>
+        &lt;!&ndash; 一对一 &ndash;&gt;
+       &lt;!&ndash; <association property="product_details" javaType="com.yujing.yujing.pojo.Product_details">
+            <result column="img" property="img"/>
+            <result column="img_name" property="img_name"/>
+            <result column="characteristic" property="characteristic"/>
+            <result column="area" property="area"/>
+            <result column="patent" property="patent"/>
+            <result column="pid" property="pid"/>
+        </association>&ndash;&gt;
+        &lt;!&ndash; 一对多 &ndash;&gt;
+      &lt;!&ndash;  <collection property="product_flows" ofType="com.yujing.yujing.pojo.Product_flow">
+            <result column="img" property="img"/>
+            <result column="text" property="text"/>
+            <result column="pid" property="pid"/>
+        </collection>&ndash;&gt;
+        &lt;!&ndash; 一对多 &ndash;&gt;
+        &lt;!&ndash;<collection property="product_imgs" ofType="com.yujing.yujing.pojo.Product_img">
+            <result column="i_img" property="i_img"/>
+            <result column="pid" property="pid"/>
+        </collection>&ndash;&gt;
+    </resultMap>-->
+
+    <insert id="insertproduct" parameterType="com.yujing.yujing.pojo.Product">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into product (name,price,batch_quantity,guide,type,parameterimg) values(#{name},#{price},#{batch_quantity},#{guide},#{type},#{parameterimg})
+    </insert>
+
+    <insert id="insertproductdetails" parameterType="com.yujing.yujing.pojo.Product_details">
+        insert into product_details (img,img_name,characteristic,area,patent,pid) values(#{img},#{img_name},#{characteristic},#{area},#{patent},#{pid})
+    </insert>
+
+    <insert id="insertproductflow" parameterType="com.yujing.yujing.pojo.Product_flow">
+        insert into product_flow (img,text,pid) values(#{img},#{text},#{pid})
+    </insert>
+
+    <insert id="insertproductimg" parameterType="com.yujing.yujing.pojo.Product_img">
+        insert into product_img (i_img,pid) values(#{i_img},#{pid})
+    </insert>
+
+    <insert id="insertproducttype" parameterType="com.yujing.yujing.pojo.Product_type">
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into product_type (type_name) values(#{type_name})
+    </insert>
+
+    <select id="selectcountproduct" resultType="java.lang.Integer">
+        select count(*) from product
+    </select>
+
+    <select id="selectproductlimit" resultType="com.yujing.yujing.pojo.Product" parameterType="java.lang.Integer">
+        SELECT * FROM product limit ${param1},${param2}
+    </select>
+
+    <select id="selectproductflowid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_flow">
+        select * from product_flow where pid = #{id}
+    </select>
+
+    <select id="selectproductimgid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_img">
+        select * from product_img where pid = #{id}
+    </select>
+
+    <select id="selectproductdetailsid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_details">
+        select * from product_details where pid = #{id}
+    </select>
+
+    <select id="selectproducttype" resultType="com.yujing.yujing.pojo.Product_type">
+        select * from product_type
+    </select>
+
+   <!-- <select id="selectproduct" resultType="com.yujing.yujing.pojo.Product">
+        select * from product
+    </select>-->
+
+    <delete id="deleteproducttype" parameterType="com.yujing.yujing.pojo.Product_type">
+        delete from product_type where id = #{id}
+    </delete>
+
+    <delete id="deleteproduct" parameterType="com.yujing.yujing.pojo.Product">
+        delete from product where id = #{id}
+    </delete>
+
+    <delete id="deleteproducts" parameterType="com.yujing.yujing.pojo.Product">
+        delete from product where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+
+</mapper>
+

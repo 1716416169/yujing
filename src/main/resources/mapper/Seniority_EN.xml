@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.admin.Introduce.Seniority_EN">
+    <insert id="insert_seniority" parameterType="com.yujing.yujing.pojo.SeniorityPojo">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into seniority_en(id,path,k,name,type_name) values (#{id},#{path},#{k},#{name},#{type_name})
+    </insert>
+
+    <select id="select_senioritylimit" resultType="com.yujing.yujing.pojo.SeniorityPojo">
+      select * from seniority_en limit ${param1},${param2}
+    </select>
+
+    <select id="select_count_seniority" resultType="java.lang.Integer">
+        select count(*) from seniority_en
+    </select>
+
+    <delete id="delete_senioritys" parameterType="java.util.List">
+        delete from seniority_en where id in
+        <foreach collection="list" index="index" open="(" close=")" item="item" separator=",">
+            #{item.id}
+        </foreach>
+    </delete>
+
+    <delete id="delete_seniority" parameterType="com.yujing.yujing.pojo.SeniorityPojo">
+        delete from seniority_en where id=#{id}
+    </delete>
+
+    <select id="select_seniority" resultType="com.yujing.yujing.pojo.SeniorityPojo">
+        select * from seniority_en
+    </select>
+</mapper>
